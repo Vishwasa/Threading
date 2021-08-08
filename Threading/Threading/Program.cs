@@ -10,11 +10,11 @@ namespace Threading
     class Program
     {
         private static Semaphore _producerSignal = new Semaphore(1, 1);
-        private static Semaphore _consumerSignal = new Semaphore(1, 1);
+        private static Semaphore _consumerSignal = new Semaphore(0, 1);
         static void Main(string[] args)
         {
             //List<int> BlockingQueue = new List<int>(4);
-            //Thread t = new Thread(()=>Producer(BlockingQueue));
+            //Thread t = new Thread(() => Producer(BlockingQueue));
             //t.Start();
             //----------------------------
 
@@ -26,8 +26,9 @@ namespace Threading
             //ThreadStartDelegate.Test();
             //PassingDataToThread.Test();
 
-            //UnisexBathroom bathRoom = new UnisexBathroom(3);
-            UnisexBathroom.Test();
+            //UnisexBathroom.Test();
+
+            TokenBucketFilter.Test();
             Console.ReadLine();
         }
 
@@ -36,11 +37,12 @@ namespace Threading
             _producerSignal.WaitOne();
             for (int i = 0; i < 50; i++)
             {
-                Random r = new Random(5000);
+                Random r = new Random(50);
                 Thread.Sleep(r.Next());
+                Console.WriteLine($"Adding {i}");
                 BlockingQueue.Add(i);
             }
-            _producerSignal.Release();
+            _consumerSignal.Release();
         }
         private static void Consumer(List<int> BlockingQueue)
         {
@@ -49,9 +51,10 @@ namespace Threading
             {
                 Random r = new Random(5000);
                 Thread.Sleep(r.Next());
-                BlockingQueue.Add(i);
+                Console.WriteLine($"Removing {i}");
+                BlockingQueue.Remove(i);
             }
-            _consumerSignal.Release();
+            _producerSignal.Release();
         }
     }
 }

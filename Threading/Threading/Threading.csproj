@@ -53,6 +53,7 @@
     <Compile Include="ThreadStartDelegate.cs" />
     <Compile Include="ThreadTest.cs" />
     <Compile Include="Problems\UnisexBathroom.cs" />
+    <Compile Include="TokenBucketFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

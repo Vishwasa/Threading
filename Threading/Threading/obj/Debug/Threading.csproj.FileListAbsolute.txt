@@ -4,3 +4,9 @@ C:\Users\Vishwas\source\repos\Threading\Threading\bin\Debug\Threading.pdb
 C:\Users\Vishwas\source\repos\Threading\Threading\obj\Debug\Threading.csprojAssemblyReference.cache
 C:\Users\Vishwas\source\repos\Threading\Threading\obj\Debug\Threading.exe
 C:\Users\Vishwas\source\repos\Threading\Threading\obj\Debug\Threading.pdb
+D:\SourceCode\Threading\Threading\Threading\bin\Debug\Threading.exe.config
+D:\SourceCode\Threading\Threading\Threading\bin\Debug\Threading.exe
+D:\SourceCode\Threading\Threading\Threading\bin\Debug\Threading.pdb
+D:\SourceCode\Threading\Threading\Threading\obj\Debug\Threading.csprojAssemblyReference.cache
+D:\SourceCode\Threading\Threading\Threading\obj\Debug\Threading.exe
+D:\SourceCode\Threading\Threading\Threading\obj\Debug\Threading.pdb
